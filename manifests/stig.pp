@@ -16,5 +16,6 @@
 # \subsection{STIG-required configuration}
 
 class trash::stig {
-    include "trash::stig::${::osfamily}"
+    $lower_osfamily = downcase($::osfamily)
+    include "trash::stig::${lower_osfamily}"
 }
